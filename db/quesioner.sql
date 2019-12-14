@@ -1,0 +1,73 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+
+DROP TABLE IF EXISTS `question`;
+CREATE TABLE `question` (
+  `id` int(11) NOT NULL,
+  `cat_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `question_cat`;
+CREATE TABLE `question_cat` (
+  `id` int(11) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `responden`;
+CREATE TABLE `responden` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `usia` tinyint(1) NOT NULL,
+  `gol` tinyint(1) NOT NULL,
+  `kelamin` tinyint(1) NOT NULL,
+  `pend_terakhir` tinyint(1) NOT NULL,
+  `masa_kerja` tinyint(1) NOT NULL,
+  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `responses`;
+CREATE TABLE `responses` (
+  `id` int(11) NOT NULL,
+  `responden_id` int(11) NOT NULL,
+  `question_id` int(11) NOT NULL,
+  `answer` tinyint(1) NOT NULL COMMENT '1-7',
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+ALTER TABLE `question`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `question_cat`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `responden`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `responses`
+  ADD PRIMARY KEY (`id`);
+
+
+ALTER TABLE `question`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `question_cat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `responden`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `responses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
