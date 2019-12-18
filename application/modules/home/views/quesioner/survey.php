@@ -6,11 +6,28 @@ $form->init('edit');
 
 $form->addInput('nama','text');
 $form->addInput('usia','dropdown');
-$form->setOptions('usia',['1'=>'< 31 Tahun','2'=>'31-40 Tahun','3'=>'41-50 Tahun','4'=>'> 50 tahun']);
+$form->setOptions('usia',$this->question_model->usia());
 
 $form->addInput('gol','dropdown');
 $form->setLabel('gol','Golongan');
-$form->setOptions('gol',[1=>'I',2=>'II',3=>'III',4=>'IV']);
+$form->setOptions('gol',$this->question_model->golongan());
+
+$form->addInput('kelamin','dropdown');
+$form->setOptions('kelamin',['Perempuan','Laki-laki']);
+$form->setLabel('kelamin','jenis kelamin');
+
+$form->addInput('pend_terakhir','dropdown');
+$form->setLabel('pend_terakhir','pendidikan terakhir');
+$form->setOptions('pend_terakhir',$this->question_model->pend_terakhir());
+
+$form->addInput('masa_kerja','dropdown');
+$form->setLabel('masa_kerja','Masa Kerja');
+$form->setOptions('masa_kerja',$this->question_model->masa_kerja());
 
 $form->setRequired('All');
 $form->form();
+
+if(!empty($form->insert_id))
+{
+	header('location:'.base_url('survey/question?id='.$form->insert_id));
+}
