@@ -22,47 +22,47 @@ CREATE TABLE `admin_menu` (
   `updated` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `admin_menu` (`id`, `par_id`, `user_role_ids`, `title`, `icon`, `link`, `sort_order`, `created`) VALUES
-(1, 0, ',1,2,3,', 'Dashboard', 'fa fa-tachometer-alt', '/', 1, '2019-03-30 03:05:59'),
-(2, 0, ',1,2,3,', 'Content', 'fa fa-file-alt', '/content', 2, '2019-03-30 03:24:19'),
-(3, 2, ',1,2,3,', 'Category', 'fa fa-list', '/content/category', 21, '2019-03-30 03:26:22'),
-(4, 2, ',1,2,3,', 'Add Content', 'fa fa-pencil-alt', '/content/edit', 22, '2019-03-30 03:35:27'),
-(5, 2, ',1,2,3,', 'Content List', 'fa fa-list', '/content/list', 23, '2019-03-30 03:35:44'),
-(6, 2, ',1,2,3,', 'Tag', 'fa fa-list', '/content/tag', 24, '2019-03-30 03:36:06'),
-(7, 0, ',1,2,3,', 'Gallery', 'fa fa-images', '/gallery', 3, '2019-03-31 22:53:29'),
-(8, 7, ',1,2,3,', 'Images', 'fa fa-image', '/gallery', 31, '2019-03-31 22:53:57'),
-(9, 0, ',1,2,', 'User', 'fa fa-user', '/user', 4, '2019-03-31 22:54:25'),
-(10, 9, ',1,2,', 'User List', 'fa fa-dot-circle', '/user/list', 41, '2019-03-31 22:55:32'),
-(11, 9, ',1,2,', 'User Edit', 'fa fa-dot-circle', '/user/edit', 42, '2019-03-31 22:58:48'),
-(12, 9, ',1,', 'User Role', 'fa fa-dot-circle', '/user/role', 43, '2019-03-31 22:59:13'),
-(13, 0, ',1,2,', 'Menu', 'fa fa-list', '/menu', 5, '2019-03-31 22:59:33'),
-(14, 13, ',1,2,', 'Add Menu', 'fa fa-pencil-alt', '/menu/edit', 51, '2019-03-31 22:59:58'),
-(15, 13, ',1,2,', 'Menu List', 'fa fa-pencil-alt', '/menu/list', 52, '2019-03-31 23:00:18'),
-(16, 13, ',1,2,', 'Menu Position', 'fa fa-list', '/menu/position', 53, '2019-03-31 23:00:37'),
-(17, 0, ',1,', 'Admin Menu', 'fa fa-list', '/admin_menu', 6, '2019-03-31 23:01:10'),
-(18, 17, ',1,', 'Add Menu', 'fa fa-pencil-alt', '/admin_menu/edit', 61, '2019-04-01 05:45:00'),
-(19, 17, ',1,', 'Menu List', 'fa fa-list', '/admin_menu/list', 62, '2019-04-01 05:45:20'),
-(20, 17, ',1,', 'Menu Parent', 'fa fa-list', '/admin_menu/list?id=0', 63, '2019-04-01 05:46:00'),
-(21, 0, ',1,2,', 'Data', 'fa fa-database', '/visitor', 7, '2019-04-01 05:46:34'),
-(22, 21, ',1,2,', 'Visitor', 'fa fa-chart-bar', '/visitor', 72, '2019-04-01 05:46:56'),
-(23, 0, ',1,2,', 'Configuration', 'fa fa-cog', '/config', 8, '2019-04-01 06:03:37'),
-(24, 23, ',1,2,', 'Logo', 'fa fa-cog', '/config/logo', 81, '2019-04-01 06:04:28'),
-(25, 23, ',1,2,', 'Site', 'fa fa-cog', '/config/site', 82, '2019-04-01 06:04:41'),
-(26, 23, ',1,2,', 'Templates', 'fa fa-cog', '/config/templates', 83, '2019-04-01 06:04:57'),
-(27, 23, ',1,2,', 'Contact', 'fa fa-cog', '/config/contact', 84, '2019-04-01 06:05:14'),
-(28, 23, ',1,2,', 'Style', 'fa fa-cog', '/config/style', 86, '2019-04-01 06:06:52'),
-(29, 23, ',1,2,', 'Script', 'fa fa-cog', '/config/script', 87, '2019-04-01 06:07:29'),
-(30, 21, ',1,2,', 'Backup', 'fa fa-download', '/backup', 73, '2019-04-01 06:08:04'),
-(31, 21, ',1,2,', 'Restore', 'fa fa-upload', '/restore', 74, '2019-04-01 06:08:15'),
-(32, 21, ',1,2,', 'Delete Cache', 'fa fa-trash', '/config/delete_cache', 75, '2019-04-04 00:08:10'),
-(33, 21, ',1,2,', 'Invoice', 'fa fa-money', '/invoice', 71, '2019-04-05 23:07:23'),
-(34, 23, ',1,2,', 'Bank Account', 'fa fa-user', '/config/bank_account', 85, '2019-04-06 01:37:09'),
-(35, 23, ',1,', 'Dashboard', 'fa fa-chart-bar', '/config/dashboard', 88, '2019-04-19 18:37:39'),
-(37, 21, ',1,', 'Subscribers', 'fa fa-user', '/subscriber', 1, '2019-04-22 06:37:13'),
-(38, 0, ',1,2,', 'Question', 'fa fa-chart-bar', '#', 1, '2019-12-14 00:19:00'),
-(39, 38, ',1,2,', 'Category', 'fa fa-list', '/question/category', 3, '2019-12-14 00:19:27'),
-(40, 38, ',1,2,', 'Question', 'fa fa-list', '/question', 2, '2019-12-14 00:19:56'),
-(41, 38, ',1,2,', 'Add Question', 'fa fa-plus', '/question/edit', 1, '2019-12-14 00:20:45');
+INSERT INTO `admin_menu` (`id`, `par_id`, `user_role_ids`, `title`, `icon`, `link`, `sort_order`, `created`, `updated`) VALUES
+(1, 0, ',1,2,3,', 'Dashboard', 'fa fa-tachometer-alt', '/', 1, '2019-03-30 03:05:59', '2019-12-18 04:35:21'),
+(2, 0, ',1,2,3,', 'Content', 'fa fa-file-alt', '/content', 2, '2019-03-30 03:24:19', '2019-12-18 04:35:21'),
+(3, 2, ',1,2,3,', 'Category', 'fa fa-list', '/content/category', 21, '2019-03-30 03:26:22', '2019-12-18 04:35:21'),
+(4, 2, ',1,2,3,', 'Add Content', 'fa fa-pencil-alt', '/content/edit', 22, '2019-03-30 03:35:27', '2019-12-18 04:35:21'),
+(5, 2, ',1,2,3,', 'Content List', 'fa fa-list', '/content/list', 23, '2019-03-30 03:35:44', '2019-12-18 04:35:21'),
+(6, 2, ',1,2,3,', 'Tag', 'fa fa-list', '/content/tag', 24, '2019-03-30 03:36:06', '2019-12-18 04:35:21'),
+(7, 0, ',1,2,3,', 'Gallery', 'fa fa-images', '/gallery', 3, '2019-03-31 22:53:29', '2019-12-18 04:35:21'),
+(8, 7, ',1,2,3,', 'Images', 'fa fa-image', '/gallery', 31, '2019-03-31 22:53:57', '2019-12-18 04:35:21'),
+(9, 0, ',1,2,', 'User', 'fa fa-user', '/user', 4, '2019-03-31 22:54:25', '2019-12-18 04:35:21'),
+(10, 9, ',1,2,', 'User List', 'fa fa-dot-circle', '/user/list', 41, '2019-03-31 22:55:32', '2019-12-18 04:35:21'),
+(11, 9, ',1,2,', 'User Edit', 'fa fa-dot-circle', '/user/edit', 42, '2019-03-31 22:58:48', '2019-12-18 04:35:21'),
+(12, 9, ',1,', 'User Role', 'fa fa-dot-circle', '/user/role', 43, '2019-03-31 22:59:13', '2019-12-18 04:35:21'),
+(13, 0, ',1,2,', 'Menu', 'fa fa-list', '/menu', 5, '2019-03-31 22:59:33', '2019-12-18 04:35:21'),
+(14, 13, ',1,2,', 'Add Menu', 'fa fa-pencil-alt', '/menu/edit', 51, '2019-03-31 22:59:58', '2019-12-18 04:35:21'),
+(15, 13, ',1,2,', 'Menu List', 'fa fa-pencil-alt', '/menu/list', 52, '2019-03-31 23:00:18', '2019-12-18 04:35:21'),
+(16, 13, ',1,2,', 'Menu Position', 'fa fa-list', '/menu/position', 53, '2019-03-31 23:00:37', '2019-12-18 04:35:21'),
+(17, 0, ',1,', 'Admin Menu', 'fa fa-list', '/admin_menu', 6, '2019-03-31 23:01:10', '2019-12-18 04:35:21'),
+(18, 17, ',1,', 'Add Menu', 'fa fa-pencil-alt', '/admin_menu/edit', 61, '2019-04-01 05:45:00', '2019-12-18 04:35:21'),
+(19, 17, ',1,', 'Menu List', 'fa fa-list', '/admin_menu/list', 62, '2019-04-01 05:45:20', '2019-12-18 04:35:21'),
+(20, 17, ',1,', 'Menu Parent', 'fa fa-list', '/admin_menu/list?id=0', 63, '2019-04-01 05:46:00', '2019-12-18 04:35:21'),
+(21, 0, ',1,2,', 'Data', 'fa fa-database', '/visitor', 7, '2019-04-01 05:46:34', '2019-12-18 04:35:21'),
+(22, 21, ',1,2,', 'Visitor', 'fa fa-chart-bar', '/visitor', 72, '2019-04-01 05:46:56', '2019-12-18 04:35:21'),
+(23, 0, ',1,2,', 'Configuration', 'fa fa-cog', '/config', 8, '2019-04-01 06:03:37', '2019-12-18 04:35:21'),
+(24, 23, ',1,2,', 'Logo', 'fa fa-cog', '/config/logo', 81, '2019-04-01 06:04:28', '2019-12-18 04:35:21'),
+(25, 23, ',1,2,', 'Site', 'fa fa-cog', '/config/site', 82, '2019-04-01 06:04:41', '2019-12-18 04:35:21'),
+(26, 23, ',1,2,', 'Templates', 'fa fa-cog', '/config/templates', 83, '2019-04-01 06:04:57', '2019-12-18 04:35:21'),
+(27, 23, ',1,2,', 'Contact', 'fa fa-cog', '/config/contact', 84, '2019-04-01 06:05:14', '2019-12-18 04:35:21'),
+(28, 23, ',1,2,', 'Style', 'fa fa-cog', '/config/style', 86, '2019-04-01 06:06:52', '2019-12-18 04:35:21'),
+(29, 23, ',1,2,', 'Script', 'fa fa-cog', '/config/script', 87, '2019-04-01 06:07:29', '2019-12-18 04:35:21'),
+(30, 21, ',1,2,', 'Backup', 'fa fa-download', '/backup', 73, '2019-04-01 06:08:04', '2019-12-18 04:35:21'),
+(31, 21, ',1,2,', 'Restore', 'fa fa-upload', '/restore', 74, '2019-04-01 06:08:15', '2019-12-18 04:35:21'),
+(32, 21, ',1,2,', 'Delete Cache', 'fa fa-trash', '/config/delete_cache', 75, '2019-04-04 00:08:10', '2019-12-18 04:35:21'),
+(33, 21, ',1,2,', 'Invoice', 'fa fa-money', '/invoice', 71, '2019-04-05 23:07:23', '2019-12-18 04:35:21'),
+(34, 23, ',1,2,', 'Bank Account', 'fa fa-user', '/config/bank_account', 85, '2019-04-06 01:37:09', '2019-12-18 04:35:21'),
+(35, 23, ',1,', 'Dashboard', 'fa fa-chart-bar', '/config/dashboard', 88, '2019-04-19 18:37:39', '2019-12-18 04:35:21'),
+(37, 21, ',1,', 'Subscribers', 'fa fa-user', '/subscriber', 1, '2019-04-22 06:37:13', '2019-12-18 04:35:21'),
+(38, 0, ',1,2,', 'Question', 'fa fa-chart-bar', '#', 1, '2019-12-14 00:19:00', '2019-12-18 04:35:21'),
+(39, 38, ',1,2,', 'Category', 'fa fa-list', '/question/category', 3, '2019-12-14 00:19:27', '2019-12-18 04:35:21'),
+(40, 38, ',1,2,', 'Question', 'fa fa-list', '/question', 2, '2019-12-14 00:19:56', '2019-12-18 04:35:21'),
+(41, 38, ',1,2,', 'Add Question', 'fa fa-plus', '/question/edit', 1, '2019-12-14 00:20:45', '2019-12-18 04:35:21');
 
 DROP TABLE IF EXISTS `bank_account`;
 CREATE TABLE `bank_account` (
@@ -75,9 +75,9 @@ CREATE TABLE `bank_account` (
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `bank_account` (`id`, `bank_name`, `person_name`, `icon`, `bank_number`, `created`) VALUES
-(1, 'BCA', 'Iwan Safrudin', 'icon_BCA.png', '0312609779', '2019-04-14 16:18:57'),
-(2, 'BNI', 'Iwan Safrudin', 'icon_BNI.png', '0813920638', '2019-04-14 16:19:55');
+INSERT INTO `bank_account` (`id`, `bank_name`, `person_name`, `icon`, `bank_number`, `created`, `updated`) VALUES
+(1, 'BCA', 'Iwan Safrudin', 'icon_BCA.png', '0312609779', '2019-04-14 16:18:57', '2019-12-18 04:35:21'),
+(2, 'BNI', 'Iwan Safrudin', 'icon_BNI.png', '0813920638', '2019-04-14 16:19:55', '2019-12-18 04:35:21');
 
 DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment` (
@@ -142,8 +142,8 @@ CREATE TABLE `content` (
   `publish` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `content` (`id`, `cat_ids`, `tag_ids`, `title`, `slug`, `description`, `keyword`, `intro`, `content`, `source`, `image`, `icon`, `image_link`, `images`, `document`, `author`, `hits`, `last_hits`, `rating`, `params`, `created`, `publish`) VALUES
-(1, ',1,', '', 'Hello World', 'hello-world', 'Hello World\r\n', 'Hello World', 'Hello World\r\n', '<p>Hello World</p>\r\n', '', 'image_Hello_World_1541950550.png', '', '', '', '', 'root', 157, '0000-00-00 00:00:00', '', '', '2018-11-11 22:35:50', 1);
+INSERT INTO `content` (`id`, `cat_ids`, `tag_ids`, `title`, `slug`, `description`, `keyword`, `intro`, `content`, `source`, `image`, `icon`, `image_link`, `images`, `document`, `author`, `hits`, `last_hits`, `rating`, `params`, `created`, `updated`, `publish`) VALUES
+(1, ',1,', '', 'Hello World', 'hello-world', 'Hello World\r\n', 'Hello World', 'Hello World\r\n', '<p>Hello World</p>\r\n', '', 'image_Hello_World_1541950550.png', '', '', '', '', 'root', 158, '0000-00-00 00:00:00', '', '', '2018-11-11 22:35:50', '2019-12-18 12:15:25', 1);
 
 DROP TABLE IF EXISTS `content_cat`;
 CREATE TABLE `content_cat` (
@@ -159,8 +159,8 @@ CREATE TABLE `content_cat` (
   `updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `content_cat` (`id`, `par_id`, `title`, `slug`, `image`, `icon`, `description`, `publish`, `created`) VALUES
-(1, 0, 'Uncategorized', 'uncategorized', '', '', '', 1, '2018-11-11 22:23:38');
+INSERT INTO `content_cat` (`id`, `par_id`, `title`, `slug`, `image`, `icon`, `description`, `publish`, `created`, `updated`) VALUES
+(1, 0, 'Uncategorized', 'uncategorized', '', '', '', 1, '2018-11-11 22:23:38', '2019-12-18 04:35:21');
 
 DROP TABLE IF EXISTS `content_tag`;
 CREATE TABLE `content_tag` (
@@ -204,9 +204,9 @@ CREATE TABLE `menu_position` (
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `menu_position` (`id`, `title`, `created`) VALUES
-(1, 'Top Menu', '2018-11-12 02:16:02'),
-(2, 'Bottom Menu', '2018-11-15 12:39:27');
+INSERT INTO `menu_position` (`id`, `title`, `created`, `updated`) VALUES
+(1, 'Top Menu', '2018-11-12 02:16:02', '2019-12-18 04:35:21'),
+(2, 'Bottom Menu', '2018-11-15 12:39:27', '2019-12-18 04:35:21');
 
 DROP TABLE IF EXISTS `message`;
 CREATE TABLE `message` (
@@ -269,19 +269,67 @@ CREATE TABLE `question` (
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `question` (`id`, `cat_id`, `number`, `title`, `created`) VALUES
-(1, 1, 1, 'Pimpinan saya ikut bertanggung jawab terhadap pekerjaan bawahan', '2019-12-18 03:15:51'),
-(2, 1, 2, 'Pimpinan saya memperhatikan kesejahteraan bawahan', '2019-12-18 03:16:06'),
-(3, 1, 3, 'Pimpinan saya mendukung, memberikan support terhadap penyelesaian kinerja bawahan', '2019-12-18 03:16:20'),
-(4, 1, 4, 'Staf di instansi saya menerima tugas yang tidak terstruktur', '2019-12-18 03:17:29'),
-(5, 1, 5, 'Staf di instansi saya bekerja secara sukarela melakukan tugas tambahan', '2019-12-18 03:17:44'),
-(6, 1, 6, 'Staf di instansi saya bersedia melaksanakan tugas yang diberikan pimpinan', '2019-12-18 04:05:19'),
-(7, 2, 1, 'Saya bekerja tepat waktu dalam mengoperasionakan SIstem Informasi Desa (SID)', '2019-12-18 04:06:06'),
-(8, 2, 2, 'Saya melakukan perencanaan yang tepat dalam mengoperasionakan SIstem Informasi Desa (SID)', '2019-12-18 04:06:19'),
-(9, 3, 1, 'Saya memiliki dorongan kerja yang  unggul untuk mencapai target yang ditetapkan', '2019-12-18 04:06:52'),
-(10, 3, 2, 'Saya menerima  umpan balik yang cepat atas kinerja yang telah saya lakukan', '2019-12-18 04:07:19'),
-(11, 4, 1, 'Saya mengoperasionalkan, mengakses, menyimpan dan mengolah Sistem Informasi  Desa (SID)  sesuai dengan target kinerja yang sudah ditentukan', '2019-12-18 04:08:09'),
-(12, 4, 2, 'Saya membantu dan memudahkan Pemerintah Desa dalam mengakses informasi dengan pemerintah kabupaten, propinsi dan pusat tentang rencana kerja Pemerintah', '2019-12-18 04:08:21');
+INSERT INTO `question` (`id`, `cat_id`, `number`, `title`, `created`, `updated`) VALUES
+(1, 1, 1, 'Pimpinan saya ikut bertanggung jawab terhadap pekerjaan bawahan', '2019-12-18 03:15:51', '2019-12-18 04:35:21'),
+(2, 1, 2, 'Pimpinan saya memperhatikan kesejahteraan bawahan', '2019-12-18 03:16:06', '2019-12-18 04:35:21'),
+(3, 1, 3, 'Pimpinan saya mendukung, memberikan support terhadap penyelesaian kinerja bawahan', '2019-12-18 03:16:20', '2019-12-18 04:35:21'),
+(4, 1, 4, 'Staf di instansi saya menerima tugas yang tidak terstruktur', '2019-12-18 03:17:29', '2019-12-18 04:35:21'),
+(5, 1, 5, 'Staf di instansi saya bekerja secara sukarela melakukan tugas tambahan', '2019-12-18 03:17:44', '2019-12-18 04:35:21'),
+(6, 1, 6, 'Staf di instansi saya bersedia melaksanakan tugas yang diberikan pimpinan', '2019-12-18 04:05:19', '2019-12-18 04:35:21'),
+(7, 2, 1, 'Saya bekerja tepat waktu dalam mengoperasionakan SIstem Informasi Desa (SID)', '2019-12-18 04:06:06', '2019-12-18 04:35:21'),
+(8, 2, 2, 'Saya melakukan perencanaan yang tepat dalam mengoperasionakan SIstem Informasi Desa (SID)', '2019-12-18 04:06:19', '2019-12-18 04:35:21'),
+(9, 3, 1, 'Saya memiliki dorongan kerja yang  unggul untuk mencapai target yang ditetapkan', '2019-12-18 04:06:52', '2019-12-18 04:35:21'),
+(10, 3, 2, 'Saya menerima  umpan balik yang cepat atas kinerja yang telah saya lakukan', '2019-12-18 04:07:19', '2019-12-18 04:35:21'),
+(11, 4, 1, 'Saya mengoperasionalkan, mengakses, menyimpan dan mengolah Sistem Informasi  Desa (SID)  sesuai dengan target kinerja yang sudah ditentukan', '2019-12-18 04:08:09', '2019-12-18 04:35:21'),
+(12, 4, 2, 'Saya membantu dan memudahkan Pemerintah Desa dalam mengakses informasi dengan pemerintah kabupaten, propinsi dan pusat tentang rencana kerja Pemerintah', '2019-12-18 04:08:21', '2019-12-18 04:35:21'),
+(13, 1, 7, 'Staf di instansi saya loyal terhadap pimpinan', '2019-12-18 04:43:33', '2019-12-18 04:43:33'),
+(14, 1, 8, 'Pimpinan di isntasni saya memberikan kepercayaan terhadap bawahan', '2019-12-18 04:44:41', '2019-12-18 04:44:41'),
+(16, 1, 9, 'Pimpinan Staf di instansi saya bertanggung jawan atas kinerja bawahannya', '2019-12-18 04:46:09', '2019-12-18 04:46:09'),
+(17, 1, 10, 'Pegawai di instasni saya mempunyai komitmen yang besar dari atasan terhadap bawahan', '2019-12-18 04:46:44', '2019-12-18 04:46:44'),
+(18, 1, 11, 'Staf di instansi saya mendapatkan kompensasi atas pekerjaan yang dilakukan', '2019-12-18 04:47:02', '2019-12-18 04:47:02'),
+(19, 1, 12, 'Staf di instansi saya disiplin tidak toleransi absensi', '2019-12-18 04:47:23', '2019-12-18 04:47:23'),
+(20, 1, 13, 'Pimpinan di instansi saya mengatur tugas sesuai dengan tugas pokok dan fungsinya dan bawahan melaksanakan dengan sebaik baiknya', '2019-12-18 04:47:34', '2019-12-18 04:47:34'),
+(24, 2, 3, 'Saya memiliki inisiatif memperbaharui data, mempublikasikan data, merespon tanggapan dalam mengoperasionakan Sistem Informasi Desa (SID)', '2019-12-18 04:50:25', '2019-12-18 04:50:25'),
+(25, 2, 4, 'Saya teliti dalam memasukkan data dalam SID', '2019-12-18 04:50:39', '2019-12-18 04:50:39'),
+(29, 2, 5, 'Saya mengecek ulang, menerima masukan dan segala bentuk komunikasi  dalam mengoperasionakan Sistem Informasi Desa (SID)', '2019-12-18 04:51:59', '2019-12-18 04:51:59'),
+(30, 2, 6, 'Saya fleksibel dalam mengoperasionakan Sistem Informasi Desa (SID)', '2019-12-18 04:52:08', '2019-12-18 04:52:08'),
+(31, 2, 7, 'Saya memiliki rasa empati, terhadap rekan kerja yang kesusahan', '2019-12-18 04:52:21', '2019-12-18 04:52:21'),
+(32, 2, 8, 'Persuatif', '2019-12-18 04:52:48', '2019-12-18 04:52:48'),
+(33, 2, 9, 'Saya mengoperasionakan Sistem Informasi Desa (SID) dengan membetuk jaringan kerja', '2019-12-18 04:53:05', '2019-12-18 04:53:05'),
+(34, 2, 10, 'Saya negoisasi terhadap segala bentuk komunikasi yang ada di SID ', '2019-12-18 04:53:26', '2019-12-18 04:53:26'),
+(35, 2, 11, 'Saya percaya diri, dalam mengoperasionakan Sistem Informasi Desa (SID)', '2019-12-18 04:53:45', '2019-12-18 04:53:45'),
+(36, 2, 12, 'Saya bekerja dalam tim dalam mengoperasionakan Sistem Informasi Desa (SID) ', '2019-12-18 04:53:59', '2019-12-18 04:53:59'),
+(37, 2, 13, 'Pengembangan orang lain', '2019-12-18 04:54:20', '2019-12-18 04:54:20'),
+(38, 2, 14, 'Saya berkomunikasi secara lisan dengan rekan kerja maupun pimpinan dalam  mengoperasionakan Sistem Informasi Desa (SID) ', '2019-12-18 04:54:41', '2019-12-18 04:54:41'),
+(39, 2, 15, 'Saya menggunakan konsep sesuai dengan Peraturan Gubernur Jawa Tengah Nomor 47 Tahun 2016 dalam  mengoperasionakan Sistem Informasi Desa (SID) ', '2019-12-18 04:54:56', '2019-12-18 04:54:56'),
+(40, 2, 16, 'Saya menggunakan pola yang sistematis dalam mengoperasionakan Sistem Informasi Desa (SID)', '2019-12-18 04:55:09', '2019-12-18 04:55:09'),
+(41, 2, 17, 'Saya belajar dan mengembangkan pengetahuan dalam mengoperasionakan Sistem Informasi Desa (SID)', '2019-12-18 04:59:27', '2019-12-18 04:59:27'),
+(42, 2, 18, 'Saya menggunakan teknologi dalam  mengoperasionakan Sistem Informasi Desa (SID) Manajemen lisan', '2019-12-18 05:00:00', '2019-12-18 05:00:00'),
+(43, 2, 19, 'Saya menganalisis  jumlah pekerjaan yang harus diselesaikan  dalam  mengoperasionakan Sistem Informasi Desa (SID) Manajemen lisan', '2019-12-18 05:00:14', '2019-12-18 05:00:14'),
+(44, 2, 20, 'Saya mempublikasikan data dan informasi dalam Sistem Informasi Desa sesuai dengan kondisi riil di masyarakat', '2019-12-18 05:00:29', '2019-12-18 05:00:29'),
+(45, 2, 21, 'Saya berkomunikasi secara tertulis  dengan rekan kerja maupun pimpinan dalam  mengoperasionakan Sistem Informasi Desa (SID) Manajemen lisan', '2019-12-18 05:00:57', '2019-12-18 05:00:57'),
+(46, 3, 3, 'Saya berusaha keras supaya sukses.', '2019-12-18 05:01:45', '2019-12-18 05:01:45'),
+(47, 3, 4, 'Saya mempunyai hasrat untuk berpengaruh  dalam mencapai target kinerja', '2019-12-18 05:01:58', '2019-12-18 05:01:58'),
+(48, 3, 5, 'Saya mampu mengendalikan orang lain dalam bekerja sebagai tim.', '2019-12-18 05:02:15', '2019-12-18 05:02:15'),
+(49, 3, 6, 'Saya menyukai ditempatkan dalam situasi yang kompetitif ', '2019-12-18 05:03:10', '2019-12-18 05:03:10'),
+(50, 3, 7, 'Saya lebih peduli terhadap pencapaian kinerja', '2019-12-18 05:03:46', '2019-12-18 05:03:46'),
+(51, 3, 8, 'Saya berjuang keras untuk mendapatkan persahabatan', '2019-12-18 05:04:06', '2019-12-18 05:04:06'),
+(52, 3, 9, 'Saya lebih menyukai situasi kooperatif ', '2019-12-18 05:04:23', '2019-12-18 05:04:23'),
+(53, 3, 10, 'Saya tidak menyukai situasi kompetitif  yang tidak sehat', '2019-12-18 05:04:47', '2019-12-18 05:04:47'),
+(54, 3, 11, 'Saya menginginkan hubungan dengan timbal balik yang tinggi dalam bekerja', '2019-12-18 05:05:04', '2019-12-18 05:05:04'),
+(55, 4, 3, 'Saya mampu menyelesaikan pekerjaan sesuai dengan jumlah item kegiatan sebagai operator SID', '2019-12-18 05:06:07', '2019-12-18 05:06:07'),
+(56, 4, 4, 'Saya mampu menyelesaikan pekerjaan sesuai rencana kegiatan sebagai operator SID', '2019-12-18 05:06:19', '2019-12-18 05:06:19'),
+(57, 4, 5, 'Saya  menyelesaikan pekerjaan yaitu memasukkan data, merespon tanggapan, pertanyaan, masukan dan segala bentuk komunikasi yang ada di SID tepat waktu dan sesuai jadwal yang ditentukan', '2019-12-18 05:06:35', '2019-12-18 05:06:35'),
+(58, 4, 6, 'Saya  menyelesaikan masalah dengan  meningkatkan kualitas pelayanan administrasi Desa', '2019-12-18 05:06:48', '2019-12-18 05:06:48'),
+(59, 4, 7, 'Saya  menggunakan sumber daya yang ada secara efektif dalam bekerja sebagai operator SID', '2019-12-18 05:06:58', '2019-12-18 05:06:58'),
+(60, 4, 8, 'Saya  menggunakan keuangan kantor secara efisien dalam mengoperasionalkan SID', '2019-12-18 05:07:15', '2019-12-18 05:07:15'),
+(61, 4, 9, 'Saya  efisien menggunakan materiil  kantor dalam dalam mengoperasionalkan SID', '2019-12-18 05:07:27', '2019-12-18 05:07:27'),
+(62, 4, 10, 'Saya menggunakan teknologi yang efektif dalam dalam mengoperasionalkan SID', '2019-12-18 05:07:41', '2019-12-18 05:07:41'),
+(63, 4, 11, 'Saya menyelesaikan pekerjaan walaupun tanpa disupervisi pimpinan', '2019-12-18 05:09:30', '2019-12-18 05:09:30'),
+(64, 4, 12, 'Saya menyelesaikan pekerjaan walaupun tanpa  intervensi  pimpinan', '2019-12-18 05:09:43', '2019-12-18 05:09:43'),
+(65, 4, 13, 'Saya selalu meningkatkan kemampuan individu yang mendukung dalam mengoperasionalkan SID', '2019-12-18 05:10:03', '2019-12-18 05:10:03'),
+(66, 4, 14, 'Saya selalu meningkatkan kemampuan individu  agar dapat membantu teman yang kesulitan dalam bekerja', '2019-12-18 05:10:11', '2019-12-18 05:10:11'),
+(67, 4, 15, 'Saya bekerjasama dengan rekan kerja dalam menyelesaikan pekerjaan agar lebih efektif sebagai operator SID', '2019-12-18 05:10:30', '2019-12-18 05:10:30');
 
 DROP TABLE IF EXISTS `question_cat`;
 CREATE TABLE `question_cat` (
@@ -292,11 +340,11 @@ CREATE TABLE `question_cat` (
   `updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `question_cat` (`id`, `title`, `description`, `created`) VALUES
-(1, 'Leader -Member Exchange (LMX)', '', '2019-12-15 02:14:00'),
-(2, 'Kompetensi', '', '2019-12-15 02:14:08'),
-(3, 'Motivasi', '', '2019-12-15 02:14:17'),
-(4, 'Kinerja', '', '2019-12-15 02:14:20');
+INSERT INTO `question_cat` (`id`, `title`, `description`, `created`, `updated`) VALUES
+(1, 'Leader -Member Exchange (LMX)', '', '2019-12-15 02:14:00', '2019-12-18 04:35:21'),
+(2, 'Kompetensi', '', '2019-12-15 02:14:08', '2019-12-18 04:35:21'),
+(3, 'Motivasi', '', '2019-12-15 02:14:17', '2019-12-18 04:35:21'),
+(4, 'Kinerja', '', '2019-12-15 02:14:20', '2019-12-18 04:35:21');
 
 DROP TABLE IF EXISTS `responden`;
 CREATE TABLE `responden` (
@@ -327,8 +375,8 @@ CREATE TABLE `subscriber` (
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `subscriber` (`id`, `email`, `created`) VALUES
-(1, 'iwansafr@gmail.com', '2019-04-22 06:39:07');
+INSERT INTO `subscriber` (`id`, `email`, `created`, `updated`) VALUES
+(1, 'iwansafr@gmail.com', '2019-04-22 06:39:07', '2019-12-18 04:35:21');
 
 DROP TABLE IF EXISTS `testimonial`;
 CREATE TABLE `testimonial` (
@@ -342,8 +390,8 @@ CREATE TABLE `testimonial` (
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `testimonial` (`id`, `name`, `email`, `profession`, `testimonial`, `publish`, `created`) VALUES
-(2, 'iwan', 'iwansafr@gmail.com', 'guru', 'keren websitenya', 0, '2019-08-27 11:53:56');
+INSERT INTO `testimonial` (`id`, `name`, `email`, `profession`, `testimonial`, `publish`, `created`, `updated`) VALUES
+(2, 'iwan', 'iwansafr@gmail.com', 'guru', 'keren websitenya', 0, '2019-08-27 11:53:56', '2019-12-18 04:35:21');
 
 DROP TABLE IF EXISTS `trash`;
 CREATE TABLE `trash` (
@@ -354,6 +402,15 @@ CREATE TABLE `trash` (
   `table_content` text NOT NULL,
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `trash` (`id`, `user_id`, `table_id`, `table_title`, `table_content`, `created`) VALUES
+(1, 1, 15, 'question', '{\"id\":\"15\",\"cat_id\":\"0\",\"number\":\"9\",\"title\":\"Pimpinan Staf di instansi saya bertanggung jawan atas kinerja bawahannya\",\"created\":\"2019-12-18 11:44:59\",\"updated\":\"2019-12-18 11:44:59\"}', '2019-12-18 11:46:00'),
+(2, 1, 21, 'question', '{\"id\":\"21\",\"cat_id\":\"4\",\"number\":\"3\",\"title\":\"Saya memiliki inisiatif memperbaharui data, mempublikasikan data, merespon tanggapan dalam mengoperasionakan Sistem Informasi Desa (SID)\",\"created\":\"2019-12-18 11:48:10\",\"updated\":\"2019-12-18 11:48:10\"}', '2019-12-18 11:49:25'),
+(3, 1, 22, 'question', '{\"id\":\"22\",\"cat_id\":\"4\",\"number\":\"4\",\"title\":\"Saya teliti dalam memasukkan data dalam SID\",\"created\":\"2019-12-18 11:48:35\",\"updated\":\"2019-12-18 11:48:35\"}', '2019-12-18 11:49:25'),
+(4, 1, 23, 'question', '{\"id\":\"23\",\"cat_id\":\"4\",\"number\":\"5\",\"title\":\"Saya mengecek ulang, menerima masukan dan segala bentuk komunikasi  dalam mengoperasionakan Sistem Informasi Desa (SID)\",\"created\":\"2019-12-18 11:48:59\",\"updated\":\"2019-12-18 11:48:59\"}', '2019-12-18 11:49:25'),
+(5, 1, 26, 'question', '{\"id\":\"26\",\"cat_id\":\"0\",\"number\":\"5\",\"title\":\"Saya mengecek ulang, menerima masukan dan segala bentuk komunikasi  dalam mengoperasionakan Sistem Informasi Desa (SID)\",\"created\":\"2019-12-18 11:50:50\",\"updated\":\"2019-12-18 11:50:50\"}', '2019-12-18 11:51:41'),
+(6, 1, 27, 'question', '{\"id\":\"27\",\"cat_id\":\"0\",\"number\":\"6\",\"title\":\"Saya fleksibel dalam mengoperasionakan Sistem Informasi Desa (SID)\",\"created\":\"2019-12-18 11:51:01\",\"updated\":\"2019-12-18 11:51:01\"}', '2019-12-18 11:51:41'),
+(7, 1, 28, 'question', '{\"id\":\"28\",\"cat_id\":\"2\",\"number\":\"7\",\"title\":\"Saya memiliki rasa empati, terhadap rekan kerja yang kesusahan\",\"created\":\"2019-12-18 11:51:16\",\"updated\":\"2019-12-18 11:51:16\"}', '2019-12-18 11:51:41');
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -368,8 +425,8 @@ CREATE TABLE `user` (
   `updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `user` (`id`, `username`, `password`, `email`, `image`, `user_role_id`, `active`, `created`) VALUES
-(1, 'root', '$2y$10$iN3I64zsXAyy9MCEVAPe3uqv1ygazlJgKFYEc2aNCiu2VDe/ZTKjO', 'root@esoftgreat.com', '', 1, 1, '2018-11-03 07:36:32');
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `image`, `user_role_id`, `active`, `created`, `updated`) VALUES
+(1, 'root', '$2y$10$iN3I64zsXAyy9MCEVAPe3uqv1ygazlJgKFYEc2aNCiu2VDe/ZTKjO', 'root@esoftgreat.com', '', 1, 1, '2018-11-03 07:36:32', '2019-12-18 04:35:21');
 
 DROP TABLE IF EXISTS `user_login`;
 CREATE TABLE `user_login` (
@@ -385,7 +442,9 @@ INSERT INTO `user_login` (`id`, `user_id`, `ip`, `browser`, `status`, `created`)
 (1, 1, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 1, '2019-12-14 07:02:41'),
 (2, 1, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 1, '2019-12-14 18:41:52'),
 (3, 1, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 1, '2019-12-15 01:48:53'),
-(4, 1, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15', 1, '2019-12-18 10:01:28');
+(4, 1, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15', 1, '2019-12-18 10:01:28'),
+(5, 1, '36.73.33.149', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', 1, '2019-12-18 11:36:33'),
+(6, 1, '36.73.34.39', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 1, '2019-12-19 02:16:31');
 
 DROP TABLE IF EXISTS `user_login_failed`;
 CREATE TABLE `user_login_failed` (
@@ -405,10 +464,10 @@ CREATE TABLE `user_role` (
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `user_role` (`id`, `level`, `title`, `description`, `created`) VALUES
-(1, 1, 'root', 'super user', '2018-11-02 22:57:22'),
-(2, 2, 'admin', 'the administrator', '2018-11-02 22:57:22'),
-(3, 5, 'Member', 'User member yang hanya berlangganan saja', '2018-11-04 12:59:26');
+INSERT INTO `user_role` (`id`, `level`, `title`, `description`, `created`, `updated`) VALUES
+(1, 1, 'root', 'super user', '2018-11-02 22:57:22', '2019-12-18 04:35:21'),
+(2, 2, 'admin', 'the administrator', '2018-11-02 22:57:22', '2019-12-18 04:35:21'),
+(3, 5, 'Member', 'User member yang hanya berlangganan saja', '2018-11-04 12:59:26', '2019-12-18 04:35:21');
 
 DROP TABLE IF EXISTS `visitor`;
 CREATE TABLE `visitor` (
@@ -435,7 +494,16 @@ INSERT INTO `visitor` (`id`, `ip`, `visited`, `city`, `region`, `country`, `brow
 (10, '::1', 'http://localhost/quesioner/', '', '', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15', '2019-12-18 10:01:40'),
 (11, '::1', 'http://localhost/quesioner/', '', '', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15', '2019-12-18 10:02:05'),
 (12, '::1', 'http://localhost/quesioner/', '', '', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15', '2019-12-18 11:12:11'),
-(13, '::1', 'http://localhost/quesioner/survey', '', '', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15', '2019-12-18 11:12:11');
+(13, '::1', 'http://localhost/quesioner/survey', '', '', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15', '2019-12-18 11:12:11'),
+(14, '36.73.33.149', 'https://www.quesioner.mandesa.co.id/', 'Kudus', 'Central Java', 'ID', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', '2019-12-18 11:36:17'),
+(15, '36.73.33.149', 'https://www.quesioner.mandesa.co.id/favicon.ico', 'Kudus', 'Central Java', 'ID', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', '2019-12-18 11:40:56'),
+(16, '36.73.33.149', 'https://www.quesioner.mandesa.co.id/favicon.ico', 'Kudus', 'Central Java', 'ID', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', '2019-12-18 11:45:41'),
+(17, '103.127.65.176', 'https://www.quesioner.mandesa.co.id/', 'Jakarta', 'Jakarta', 'ID', 'Mozilla/5.0 (Linux; Android 9; SM-A507FN) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Mobile Safari/537.36', '2019-12-18 11:52:17'),
+(18, '36.73.33.149', 'https://www.quesioner.mandesa.co.id/', 'Kudus', 'Central Java', 'ID', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', '2019-12-18 12:15:20'),
+(19, '36.73.33.149', 'https://www.quesioner.mandesa.co.id/hello-world.html', 'Kudus', 'Central Java', 'ID', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', '2019-12-18 12:15:25'),
+(20, '36.73.33.149', 'https://www.quesioner.mandesa.co.id/', 'Kudus', 'Central Java', 'ID', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', '2019-12-18 12:15:28'),
+(21, '36.73.33.149', 'https://www.quesioner.mandesa.co.id/favicon.ico', 'Kudus', 'Central Java', 'ID', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', '2019-12-18 12:15:55'),
+(22, '36.73.34.39', 'https://www.quesioner.mandesa.co.id/', '', '', '', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', '2019-12-19 02:16:24');
 
 
 ALTER TABLE `admin_menu`
@@ -563,7 +631,7 @@ ALTER TABLE `product_tag`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `question`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 ALTER TABLE `question_cat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
@@ -581,13 +649,13 @@ ALTER TABLE `testimonial`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 ALTER TABLE `trash`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 ALTER TABLE `user_login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 ALTER TABLE `user_login_failed`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
@@ -596,7 +664,7 @@ ALTER TABLE `user_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 ALTER TABLE `visitor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 
 ALTER TABLE `trash`
