@@ -20,6 +20,7 @@ $roll->setEdit(true);
 $roll->setDelete(true);
 
 $roll->addInput('title','plaintext');
+$roll->setUrl('admin/question/clear_category');
 
 ?>
 <div class="col-md-3">

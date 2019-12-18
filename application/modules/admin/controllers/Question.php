@@ -23,7 +23,7 @@ class Question extends CI_Controller
 	}
 	public function clear_list()
 	{
-		$this->load->view('content/list');
+		$this->load->view('question/index');
 	}
 	public function edit()
 	{
@@ -35,6 +35,6 @@ class Question extends CI_Controller
 	}
 	public function clear_category()
 	{
-		$this->load->view('content/category');
+		$this->load->view('question/category');
 	}
 }
