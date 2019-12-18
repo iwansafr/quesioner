@@ -60,27 +60,14 @@ if(!empty($data))
 					</nav>
 					<div class="tab-content" id="nav-tabContent">
 						<br>
+						<?php $count_category = []; ?>
 				  	<?php foreach ($data['category'] as $key => $value): ?>
 				  		<?php $active = $j == 0 ? 'show active' : ''; ?>
 					  	<div class="tab-pane fade <?php echo $active ?>" id="nav-<?php echo $value['id']?>" role="tabpanel" aria-labelledby="nav-<?php echo $value['id']?>-tab">
 								<?php if (!empty($data['question'][$value['id']])): ?>
 									<?php foreach ($data['question'][$value['id']] as $dqkey => $dqvalue): ?>
 										<label style="font-size: 16px;"><?php echo $dqvalue['number'].'. '.$dqvalue['title'] ?></label><br>
-										<!-- <select class="form-control" name="question[<?php echo $dqvalue['id'] ?>]">
-											<option value="1">Sangat Tidak Setuju</option>
-											<option value="2">Tidak Setuju</option>
-											<option value="3">Agak Tidak Setuju</option>
-											<option value="4">Netral</option>
-											<option value="5">Agak Setuju</option>
-											<option value="6">Setuju</option>
-											<option value="7">Sangat Setuju</option>
-										</select> -->
 										<?php foreach ($options as $okey => $ovalue): ?>
-											<!-- <div class="form-check-inline">
-											  <label class="form-check-label">
-											    <input type="radio" class="form-check-input" name="question[<?php echo $dqvalue['id'] ?>]" value="<?php echo $okey ?>" required><?php echo $ovalue ?>
-											  </label>
-											</div> -->
 											<?php
 											echo '<div class="radio">';
 											echo '<label>';
@@ -95,6 +82,12 @@ if(!empty($data))
 										<?php endforeach ?>
 										<br>
 									<?php endforeach ?>
+									<?php $end = end($data['category']) ?>
+									<?php if ($value['id'] == $end['id']): ?>
+										<button class="btn btn-success"><i class="fa fa-save"></i> submit</button>
+									<?php else: ?>
+										<a href="#nav-<?php echo $value['id']+1?>-tab" onclick="document.getElementById('nav-<?php echo $value['id']+1?>-tab').click()"><i class="fa fa-arrow-right"></i> next</a>
+									<?php endif ?>
 								<?php endif ?>
 					  	</div>
 					  	<?php $j++; ?>
@@ -105,7 +98,7 @@ if(!empty($data))
 				?>
 			</div>
 			<div class="panel-footer card-footer bg-warning">
-				<button class="btn btn-success"><i class="fa fa-save"></i> submit</button> <span class="badge badge-info">pastikan semua pertanyaan sudah dijawab</span>
+				 <span class="badge badge-info">pastikan semua pertanyaan sudah dijawab</span>
 			</div>
 		</div>
 	</form>
