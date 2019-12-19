@@ -37,4 +37,9 @@ class Question extends CI_Controller
 	{
 		$this->load->view('question/category');
 	}
+
+	public function survey()
+	{
+		$this->load->view('index');
+	}
 }

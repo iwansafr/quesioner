@@ -61,12 +61,6 @@
         	<?php endforeach ?>
         </ul>
     	<?php endif ?>
-      <form class="form-inline my-2 my-lg-0" action="<?php echo base_url('search') ?>" method="get">
-				<div class="input-btn">
-					<input class="form-control mr-sm-2" type="search" placeholder="Search" name="keyword" aria-label="Search" style="border: none;box-shadow: none;outline: none;">
-					<button style="background: transparent;border: none;outline: none;color: #555;font-size: 16px;" type="submit"><i class="fas fa-search"></i></button>
-				</div>
-			</form>
     </div>
 	</div>
 </nav>

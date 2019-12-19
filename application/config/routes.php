@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$route['default_controller']               = 'home';
+$route['default_controller']               = 'home/quesioner/survey';
 $route['images']                           = 'home/e';
 $route['admin/content']                    = 'admin/content/list';
 $route['admin/user']                       = 'admin/user/list';

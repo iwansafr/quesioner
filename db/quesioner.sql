@@ -1,6 +1,4 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -59,10 +57,11 @@ INSERT INTO `admin_menu` (`id`, `par_id`, `user_role_ids`, `title`, `icon`, `lin
 (34, 23, ',1,2,', 'Bank Account', 'fa fa-user', '/config/bank_account', 85, '2019-04-06 01:37:09', '2019-12-18 04:35:21'),
 (35, 23, ',1,', 'Dashboard', 'fa fa-chart-bar', '/config/dashboard', 88, '2019-04-19 18:37:39', '2019-12-18 04:35:21'),
 (37, 21, ',1,', 'Subscribers', 'fa fa-user', '/subscriber', 1, '2019-04-22 06:37:13', '2019-12-18 04:35:21'),
-(38, 0, ',1,2,', 'Question', 'fa fa-chart-bar', '#', 1, '2019-12-14 00:19:00', '2019-12-18 04:35:21'),
-(39, 38, ',1,2,', 'Category', 'fa fa-list', '/question/category', 3, '2019-12-14 00:19:27', '2019-12-18 04:35:21'),
-(40, 38, ',1,2,', 'Question', 'fa fa-list', '/question', 2, '2019-12-14 00:19:56', '2019-12-18 04:35:21'),
-(41, 38, ',1,2,', 'Add Question', 'fa fa-plus', '/question/edit', 1, '2019-12-14 00:20:45', '2019-12-18 04:35:21');
+(38, 0, ',1,2,', 'Question', 'fa fa-chart-bar', '#', 1, '2019-12-14 00:19:00', '2019-12-19 03:26:31'),
+(39, 38, ',1,', 'Category', 'fa fa-list', '/question/category', 3, '2019-12-14 00:19:27', '2019-12-19 03:03:39'),
+(40, 38, ',1,', 'Question', 'fa fa-list', '/question', 2, '2019-12-14 00:19:56', '2019-12-19 03:03:36'),
+(41, 38, ',1,', 'Add Question', 'fa fa-plus', '/question/edit', 1, '2019-12-14 00:20:45', '2019-12-19 03:05:14'),
+(42, 38, ',1,2,', 'Survey', 'fa fa-chart-bar', '/question/survey', 4, '2019-12-19 03:04:33', '2019-12-19 03:05:19');
 
 DROP TABLE IF EXISTS `bank_account`;
 CREATE TABLE `bank_account` (
@@ -101,9 +100,9 @@ CREATE TABLE `config` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `config` (`id`, `name`, `value`) VALUES
-(1, 'templates', '{\"public_template\":\"one-night\",\"admin_template\":\"AdminLTE\"}'),
-(2, 'site', '{\"title\":\"esoftgreat\",\"link\":\"https:\\/\\/www.esoftgreat.com\",\"image\":\"image_esoftgreat_1545189785.png\",\"keyword\":\"software developmet, jasa pembuatan website, jepara, murah, mudah, cepat, ramah, aplikasi android, ios app, jasa pembuatan aplikasi android, jasa pembuatan ios app, web designer, web programmer, web developer,  web administrator, web master\",\"description\":\"jasa pembuatan berbagai macam jenis website, aplikasi android dan juga ios app, kami juga melayani konsultasi masalah bisnis anda di bidang teknologi informasi, custom sistem maupun web custom sesuai kebutuhan anda\",\"year\":\"2015\",\"lang\":\"id\"}'),
-(3, 'logo', '{\"title\":\"esoftgreat\",\"image\":\"image_sarwabimbel_1546913142.png\",\"width\":\"100\",\"height\":\"50\",\"display\":\"image\"}'),
+(1, 'templates', '{\"public_template\":\"village\",\"admin_template\":\"AdminLTE\"}'),
+(2, 'site', '{\"title\":\"questioner\",\"link\":\"https:\\/\\/www.esoftgreat.com\",\"image\":\"image_questioner.png\",\"keyword\":\"questioner\",\"description\":\"questioner\",\"year\":\"2015\",\"lang\":\"id\",\"use_cache\":\"0\"}'),
+(3, 'logo', '{\"title\":\"questioner\",\"image\":\"image_questioner.png\",\"width\":\"100\",\"height\":\"50\",\"display\":\"image\"}'),
 (4, 'one-night_widget', '{\"template\":\"one-night\",\"menu_top\":{\"content\":\"1\"},\"content_slider\":{\"content\":\"latest\",\"limit\":\"7\"},\"content_hot\":{\"content\":\"latest\",\"limit\":\"7\"},\"content_top\":{\"content\":\"latest\",\"limit\":\"7\"},\"content\":{\"content\":\"latest\",\"limit\":\"7\"},\"content_bottom\":{\"content\":\"latest\",\"limit\":\"7\"},\"right\":{\"content\":\"1\",\"limit\":\"7\"},\"menu_right\":{\"content\":\"1\"},\"right_extra\":{\"content\":\"2\",\"limit\":\"7\"},\"menu_bottom_1\":{\"content\":\"2\"},\"menu_bottom_2\":{\"content\":\"2\"},\"menu_bottom_3\":{\"content\":\"2\"},\"menu_footer\":{\"content\":\"2\"}}'),
 (5, 'contact', '{\"name\":\"esoftgreat\",\"description\":\"jasa pembuatan website dan software. sesuai kebutuhan dan keinginan anda\",\"address\":\"Jl Tulakan Km 1 \\r\\nDukuh Krajan \\r\\nDesa Tulakan Rt 06\\/02 \\r\\nKec Donorojo Kab Jepara \\r\\nJawa Tengah\\r\\nKode Pos 59454\",\"phone\":\"+6285290335332\",\"wa\":\"6285290335332\",\"email\":\"info@esoftgreat.com\",\"google\":\"https:\\/\\/plus.google.com\\/115611472723876300931\",\"facebook\":\"https:\\/\\/web.facebook.com\\/esoftgreat\\/\",\"twitter\":\"https:\\/\\/twitter.com\",\"instagram\":\"https:\\/\\/instagram.com\",\"linkedin\":\"https:\\/\\/linkedin.com\",\"wordpress\":\"https:\\/\\/esoftgreat.wordrpress.com\",\"yahoo\":\"\",\"youtube\":\"https:\\/\\/www.youtube.com\\/channel\\/UC7QNxh1R6eo3mO2hRJtj6xw?view_as=subscriber\"}'),
 (6, 'header', '{\"image\":\"image_Selamat_Datang_di_Esoftgreat_1547957588.jpeg\",\"title\":\"Selamat Datang di Esoftgreat\",\"description\":\"JASA PEMBUATAN WEBSITE, DESAIN, ARTIKEL SEO, SOSIAL MEDIA MARKETING\"}'),
@@ -358,6 +357,9 @@ CREATE TABLE `responden` (
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO `responden` (`id`, `nama`, `usia`, `gol`, `kelamin`, `pend_terakhir`, `masa_kerja`, `created`) VALUES
+(1, 'iwan safrudin', 1, 1, 1, 5, 1, '2019-12-19 04:48:41');
+
 DROP TABLE IF EXISTS `responses`;
 CREATE TABLE `responses` (
   `id` int(11) NOT NULL,
@@ -426,7 +428,8 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `image`, `user_role_id`, `active`, `created`, `updated`) VALUES
-(1, 'root', '$2y$10$iN3I64zsXAyy9MCEVAPe3uqv1ygazlJgKFYEc2aNCiu2VDe/ZTKjO', 'root@esoftgreat.com', '', 1, 1, '2018-11-03 07:36:32', '2019-12-18 04:35:21');
+(1, 'root', '$2y$10$.ux0EV2pJAwXywYZGEVZDOo4nmp5eb/mHI1QKLen9w.6uJNKFnSCq', 'root@esoftgreat.com', '', 1, 1, '2018-11-03 07:36:32', '2019-12-19 10:24:55'),
+(2, 'admin', '$2y$10$xTTMoe4S/xAvIJ49qCihZeHqxO/K/bWT9f84L3/g/FX6c8YTKPfcO', 'question@mandesa.co.id', '', 2, 1, '2019-12-19 10:25:53', '2019-12-19 10:25:53');
 
 DROP TABLE IF EXISTS `user_login`;
 CREATE TABLE `user_login` (
@@ -444,7 +447,16 @@ INSERT INTO `user_login` (`id`, `user_id`, `ip`, `browser`, `status`, `created`)
 (3, 1, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 1, '2019-12-15 01:48:53'),
 (4, 1, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15', 1, '2019-12-18 10:01:28'),
 (5, 1, '36.73.33.149', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', 1, '2019-12-18 11:36:33'),
-(6, 1, '36.73.34.39', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 1, '2019-12-19 02:16:31');
+(6, 1, '36.73.34.39', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 1, '2019-12-19 02:16:31'),
+(7, 1, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 1, '2019-12-19 05:30:06'),
+(8, 1, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 1, '2019-12-19 10:03:11'),
+(9, 0, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 0, '2019-12-19 10:25:03'),
+(10, 0, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 0, '2019-12-19 10:25:07'),
+(11, 0, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 0, '2019-12-19 10:25:14'),
+(12, 1, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 1, '2019-12-19 10:25:18'),
+(13, 0, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 0, '2019-12-19 10:26:03'),
+(14, 2, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 1, '2019-12-19 10:26:10'),
+(15, 1, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 1, '2019-12-19 10:26:23');
 
 DROP TABLE IF EXISTS `user_login_failed`;
 CREATE TABLE `user_login_failed` (
@@ -480,30 +492,6 @@ CREATE TABLE `visitor` (
   `browser` varchar(255) NOT NULL,
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-INSERT INTO `visitor` (`id`, `ip`, `visited`, `city`, `region`, `country`, `browser`, `created`) VALUES
-(1, '::1', 'http://localhost/quesioner/', '', '', '', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', '2019-12-14 07:02:13'),
-(2, '::1', 'http://localhost/quesioner/', '', '', '', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', '2019-12-14 07:02:57'),
-(3, '::1', 'http://localhost/quesioner/hello-world.html', '', '', '', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', '2019-12-14 07:03:08'),
-(4, '::1', 'http://localhost/quesioner/hello-world.html', '', '', '', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', '2019-12-14 07:03:26'),
-(5, '::1', 'http://localhost/quesioner/', '', '', '', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', '2019-12-14 07:03:44'),
-(6, '::1', 'http://localhost/quesioner/hello-world.html', '', '', '', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', '2019-12-14 07:03:58'),
-(7, '::1', 'http://localhost/quesioner/hello-world.html', '', '', '', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', '2019-12-14 07:04:41'),
-(8, '::1', 'http://localhost/quesioner/', '', '', '', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', '2019-12-14 18:41:46'),
-(9, '::1', 'http://localhost/quesioner/', '', '', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15', '2019-12-18 10:01:20'),
-(10, '::1', 'http://localhost/quesioner/', '', '', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15', '2019-12-18 10:01:40'),
-(11, '::1', 'http://localhost/quesioner/', '', '', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15', '2019-12-18 10:02:05'),
-(12, '::1', 'http://localhost/quesioner/', '', '', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15', '2019-12-18 11:12:11'),
-(13, '::1', 'http://localhost/quesioner/survey', '', '', '', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15', '2019-12-18 11:12:11'),
-(14, '36.73.33.149', 'https://www.quesioner.mandesa.co.id/', 'Kudus', 'Central Java', 'ID', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', '2019-12-18 11:36:17'),
-(15, '36.73.33.149', 'https://www.quesioner.mandesa.co.id/favicon.ico', 'Kudus', 'Central Java', 'ID', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', '2019-12-18 11:40:56'),
-(16, '36.73.33.149', 'https://www.quesioner.mandesa.co.id/favicon.ico', 'Kudus', 'Central Java', 'ID', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', '2019-12-18 11:45:41'),
-(17, '103.127.65.176', 'https://www.quesioner.mandesa.co.id/', 'Jakarta', 'Jakarta', 'ID', 'Mozilla/5.0 (Linux; Android 9; SM-A507FN) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Mobile Safari/537.36', '2019-12-18 11:52:17'),
-(18, '36.73.33.149', 'https://www.quesioner.mandesa.co.id/', 'Kudus', 'Central Java', 'ID', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', '2019-12-18 12:15:20'),
-(19, '36.73.33.149', 'https://www.quesioner.mandesa.co.id/hello-world.html', 'Kudus', 'Central Java', 'ID', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', '2019-12-18 12:15:25'),
-(20, '36.73.33.149', 'https://www.quesioner.mandesa.co.id/', 'Kudus', 'Central Java', 'ID', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', '2019-12-18 12:15:28'),
-(21, '36.73.33.149', 'https://www.quesioner.mandesa.co.id/favicon.ico', 'Kudus', 'Central Java', 'ID', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0', '2019-12-18 12:15:55'),
-(22, '36.73.34.39', 'https://www.quesioner.mandesa.co.id/', '', '', '', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', '2019-12-19 02:16:24');
 
 
 ALTER TABLE `admin_menu`
@@ -589,87 +577,60 @@ ALTER TABLE `visitor`
 
 
 ALTER TABLE `admin_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 ALTER TABLE `bank_account`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 ALTER TABLE `comment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `config`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
 ALTER TABLE `content`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 ALTER TABLE `content_cat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 ALTER TABLE `content_tag`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `invoice`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `menu_position`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 ALTER TABLE `message`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `product_cat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `product_tag`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `question`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
-
 ALTER TABLE `question_cat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 ALTER TABLE `responden`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 ALTER TABLE `responses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `subscriber`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 ALTER TABLE `testimonial`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 ALTER TABLE `trash`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 ALTER TABLE `user_login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 ALTER TABLE `user_login_failed`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `user_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 ALTER TABLE `visitor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `trash`
   ADD CONSTRAINT `trash_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

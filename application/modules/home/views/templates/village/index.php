@@ -11,7 +11,7 @@
 	<div class="banner">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-9" style="padding: 20px;">
+				<div class="col-md-12" style="padding: 20px;">
 					<?php if ($mod['content'] == 'home/index'): ?>
 						<?php $this->load->view('content_slider') ?>
 						<?php 
@@ -75,40 +75,6 @@
 						<?php
 						$this->load->view($mod['content']);?>
 					<?php endif ?>
-				</div>
-				<div class="col-md-3" style="padding: 20px;">
-					<div class="sidebar">
-						<?php $this->load->view('twitter_block') ?>
-						<?php $data_tmp['home'] = @$home; ?>
-					</div>
-					<br>
-					<div class="sidebar">
-						<?php 
-						// $data_tmp['home']['widget_right'] = @$home['content_latest'];
-						$this->load->view('content_latest');
-						?>
-					</div>
-					<br>
-					<div class="sidebar">
-						<?php 
-						// $data_tmp['home']['widget_right'] = @$home['content_popular'];
-						$this->load->view('content_popular');
-						?>
-					</div>
-					<br>
-					<?php 
-					$data_tmp['home']['widget_right'] = @$home['category'];
-					?>
-					<div class="sidebar">
-						<?php $this->load->view('widget_right', $data_tmp) ?>
-					</div>
-					<br>
-					<div class="sidebar">
-						<?php 
-						$data_tmp['home']['widget_right'] = @$home['tag'];
-						$this->load->view('widget_right', $data_tmp);
-						?>
-					</div>
 				</div>
 			</div>
 		</div>
