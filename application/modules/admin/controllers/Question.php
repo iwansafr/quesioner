@@ -8,6 +8,7 @@ class Question extends CI_Controller
 		$this->db->cache_off();
 		$this->load->model('esg_model');
 		$this->load->model('admin_model');
+		$this->load->model('question_model');
 		$this->load->library('esg');
 		$this->load->library('ZEA/zea');
 		$this->esg_model->init();
@@ -38,8 +39,24 @@ class Question extends CI_Controller
 		$this->load->view('question/category');
 	}
 
-	public function survey()
+	public function responden()
 	{
 		$this->load->view('index');
+	}
+	public function clear_responden()
+	{
+		$this->load->view('question/responden');
+	}
+
+	public function responden_detail($id = 0)
+	{
+		$data = $this->question_model->responden_detail($id);
+		$this->load->view('index',['data'=>$data]);
+	}
+
+	public function survey()
+	{
+		$data = $this->question_model->survey();
+		$this->load->view('index',['data'=>$data]);
 	}
 }
