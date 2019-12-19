@@ -24,6 +24,7 @@ $route['message/send']                     = 'home/message/send';
 $route['subscribe']                        = 'home/subscribe';
 $route['survey']                           = 'home/quesioner/survey';
 $route['survey/question']                  = 'home/quesioner/question';
+$route['survey/done']                      = 'home/quesioner/done';
 $route['testimonial']                      = 'home/testimonial';
 $route['content/pdf/(:any)']               = 'home/content/pdf';
 $route['translate_uri_dashes']             = FALSE;

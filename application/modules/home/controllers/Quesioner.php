@@ -21,11 +21,21 @@ class Quesioner extends CI_Controller
 		$this->home_model->home();
 		$this->load->view('index');
 	}
+	public function done()
+	{
+		$id = @intval($_GET['id']);	
+		$data = $this->question_model->get_responden($id,false);
+		$this->load->view('index',['data'=>$data]);
+	}
 	public function question()
 	{
-		$this->home_model->home();
 		$id = @intval($_GET['id']);
+		$this->home_model->home();
 		$data = $this->question_model->get_responden($id);
+		if(!empty($data))
+		{
+			$this->question_model->save($id);
+		}
 		$this->load->view('index',['data'=>$data]);	
 	}
 }

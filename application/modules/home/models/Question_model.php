@@ -2,7 +2,7 @@
 
 class Question_model extends CI_model
 {
-	public function get_responden($id)
+	public function get_responden($id,$full = true)
 	{
 		$data = [];
 		if(!empty($id))
@@ -17,27 +17,30 @@ class Question_model extends CI_model
 				$data['pend_terakhir'] = $this->pend_terakhir()[$data['pend_terakhir']];
 				$data['masa_kerja'] = $this->masa_kerja()[$data['masa_kerja']];
 
-				$this->db->select('id,title');
-				$category = $this->db->get_where('question_cat')->result_array();
-				$this->db->select('id,cat_id,number,title');
-				$this->db->order_by('number','ASC');
-				$question = $this->db->get_where('question')->result_array();
-
-				if(!empty($category) && !empty($question))
+				if($full)
 				{
-					$new_question = [];
-					foreach ($category as $key => $value) 
+					$this->db->select('id,title');
+					$category = $this->db->get_where('question_cat')->result_array();
+					$this->db->select('id,cat_id,number,title');
+					$this->db->order_by('number','ASC');
+					$question = $this->db->get_where('question')->result_array();
+
+					if(!empty($category) && !empty($question))
 					{
-						foreach ($question as $qkey => $qvalue) 
+						$new_question = [];
+						foreach ($category as $key => $value) 
 						{
-							if($qvalue['cat_id'] == $value['id'])
+							foreach ($question as $qkey => $qvalue) 
 							{
-								$new_question[$value['id']][] = $qvalue;
+								if($qvalue['cat_id'] == $value['id'])
+								{
+									$new_question[$value['id']][] = $qvalue;
+								}
 							}
 						}
+						$data['category'] = $category;
+						$data['question'] = $new_question;
 					}
-					$data['category'] = $category;
-					$data['question'] = $new_question;
 				}
 			}
 		}
@@ -55,6 +58,30 @@ class Question_model extends CI_model
 			6=>'Setuju',
 			7=>'Sangat Setuju'
 		];
+	}
+
+	public function save($id = 0)
+	{
+		if(!empty($id))
+		{
+			$data = $this->input->post();
+			if(!empty($data['question']))
+			{
+				$data_post = [];
+				foreach ($data['question'] as $key => $value) 
+				{
+					$data_post[] = [
+						'responden_id'=>$id,
+						'question_id'=>$key,
+						'answer'=>$value
+					];
+				}
+				if($this->db->insert_batch('responses', $data_post))
+				{
+					header('location:'.base_url('survey/done?id='.$id));
+				}
+			}
+		}
 	}
 
 	public function usia()
