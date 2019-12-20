@@ -2,6 +2,11 @@
 
 $edit = new zea();
 
+$id = @intval($_GET['id']);
+if(!empty($id))
+{
+	$edit->setId($id);
+}
 $edit->init('edit');
 $edit->setTable('question_cat');
 
@@ -21,6 +26,7 @@ $roll->setDelete(true);
 
 $roll->addInput('title','plaintext');
 $roll->setUrl('admin/question/clear_category');
+$roll->setEditLink(base_url('admin/question/category?id='),'id');
 
 ?>
 <div class="col-md-3">

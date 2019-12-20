@@ -12,4 +12,5 @@ $form->setPlainText('id',[base_url('admin/question/responden_detail/{id}')=>'det
 $form->addInput('nama','plaintext');
 $form->setNumbering(true);
 $form->setUrl('admin/question/clear_responden');
+$form->setDelete(true);
 $form->form();

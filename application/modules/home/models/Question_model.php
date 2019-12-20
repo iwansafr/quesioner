@@ -90,7 +90,7 @@ class Question_model extends CI_model
 	}
 	public function golongan()
 	{
-		return [1=>'I',2=>'II',3=>'III',4=>'IV'];
+		return ['Tanpa Golongan','I','II','III','IV'];
 	}
 	public function pend_terakhir()
 	{
