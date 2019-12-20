@@ -62,9 +62,32 @@ if(!empty($data))
           		<?php $active = $j == 0 ? 'active':''; ?>
               <div class="tab-pane <?php echo $active ?>" id="tab_<?php echo $value['id']?>">
                 <?php foreach ($data['responses'][$value['id']] as $rkey => $rvalue): ?>
+                	<?php
+                	switch (strtolower($data['options'][$rvalue['answer']])) {
+										case 'sangat setuju':
+										case 'setuju':
+											$color = 'green';
+											break;
+										case 'agak setuju':
+											$color = 'aqua';
+											break;
+										case 'sangat tidak setuju':
+										case 'tidak setuju':
+											$color = 'red';
+											break;
+										case 'agak tidak setuju':
+											$color = 'yellow';
+											break;	
+										case 'netral':
+											$color = 'yellow';
+											break;
+										default:
+											$color = 'blue';
+											break;
+									}?>
                 	<div class="form-group">
                 		<label><?php echo $rvalue['number'].'. '.$rvalue['title'] ?></label>
-                		<label class="btn-success"><?php echo $data['options'][$rvalue['answer']] ?></label>
+                		<label class="bg-<?php echo $color;?>"><?php echo $data['options'][$rvalue['answer']] ?></label>
                 		<?php 
                 		$result[$value['id']][$rvalue['answer']][] = $rvalue['id'];
                 		?>
