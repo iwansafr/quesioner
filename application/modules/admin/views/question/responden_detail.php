@@ -104,13 +104,43 @@ if(!empty($data))
 			hasil
 		</div>
 		<div class="panel-body">
-			<?php $color = [1=>'red',2=>'red',3=>'yellow',4=>'yellow',5=>'dark',6=>'aqua',7=>'green'] ?>
 			<?php foreach ($survey as $key => $value): ?>
 				<label><?php echo $key ?></label><br>
+				<?php 
+				$total = 0;
+				foreach ($value as $vvkey => $vvvalue) 
+				{
+					$total += $vvvalue;
+				}
+				?>
 				<?php foreach ($value as $vkey => $vvalue): ?>
+					<?php 
+					switch (strtolower($vkey)) {
+						case 'sangat setuju':
+						case 'setuju':
+							$color = 'green';
+							break;
+						case 'agak setuju':
+							$color = 'aqua';
+							break;
+						case 'sangat tidak setuju':
+						case 'tidak setuju':
+							$color = 'red';
+							break;
+						case 'agak tidak setuju':
+							$color = 'yellow';
+							break;	
+						case 'netral':
+							$color = 'yellow';
+							break;
+						default:
+							$color = '';
+							break;
+					}
+					?>
 					<?php echo $vkey ?>
 					<div class="progress">
-	          <div class="progress-bar progress-bar-<?php echo $color[$vvalue]?>" role="progressbar" aria-valuenow="<?php echo $vvalue ?>" aria-valuemin="1" aria-valuemax="7" style="width:<?php echo 14.28*$vvalue ?>%;">
+	          <div class="progress-bar progress-bar-<?php echo $color?>" role="progressbar" aria-valuenow="<?php echo $vvalue ?>" aria-valuemin="1" aria-valuemax="<?php echo $total ?>" style="width:<?php echo 100/$total*$vvalue ?>%;">
 	            <span><?php echo $vvalue ?></span>
 	          </div>
   	      </div>
