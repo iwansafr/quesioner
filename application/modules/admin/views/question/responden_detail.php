@@ -60,40 +60,42 @@ if(!empty($data))
           <div class="tab-content">
           	<?php foreach ($data['category'] as $key => $value): ?>
           		<?php $active = $j == 0 ? 'active':''; ?>
-              <div class="tab-pane <?php echo $active ?>" id="tab_<?php echo $value['id']?>">
-                <?php foreach ($data['responses'][$value['id']] as $rkey => $rvalue): ?>
-                	<?php
-                	switch (strtolower($data['options'][$rvalue['answer']])) {
-										case 'sangat setuju':
-										case 'setuju':
-											$color = 'green';
-											break;
-										case 'agak setuju':
-											$color = 'aqua';
-											break;
-										case 'sangat tidak setuju':
-										case 'tidak setuju':
-											$color = 'red';
-											break;
-										case 'agak tidak setuju':
-											$color = 'yellow';
-											break;	
-										case 'netral':
-											$color = 'yellow';
-											break;
-										default:
-											$color = 'blue';
-											break;
-									}?>
-                	<div class="form-group">
-                		<label><?php echo $rvalue['number'].'. '.$rvalue['title'] ?></label>
-                		<label class="bg-<?php echo $color;?>"><?php echo $data['options'][$rvalue['answer']] ?></label>
-                		<?php 
-                		$result[$value['id']][$rvalue['answer']][] = $rvalue['id'];
-                		?>
-                	</div>
-                <?php endforeach ?>
-              </div>
+            	<?php if (!empty($data['responses'][$value['id']])): ?>
+	              <div class="tab-pane <?php echo $active ?>" id="tab_<?php echo $value['id']?>">
+	                <?php foreach ($data['responses'][$value['id']] as $rkey => $rvalue): ?>
+	                	<?php
+	                	switch (strtolower($data['options'][$rvalue['answer']])) {
+											case 'sangat setuju':
+											case 'setuju':
+												$color = 'green';
+												break;
+											case 'agak setuju':
+												$color = 'aqua';
+												break;
+											case 'sangat tidak setuju':
+											case 'tidak setuju':
+												$color = 'red';
+												break;
+											case 'agak tidak setuju':
+												$color = 'yellow';
+												break;	
+											case 'netral':
+												$color = 'yellow';
+												break;
+											default:
+												$color = 'blue';
+												break;
+										}?>
+	                	<div class="form-group">
+	                		<label><?php echo $rvalue['number'].'. '.$rvalue['title'] ?></label>
+	                		<label class="bg-<?php echo $color;?>"><?php echo $data['options'][$rvalue['answer']] ?></label>
+	                		<?php 
+	                		$result[$value['id']][$rvalue['answer']][] = $rvalue['id'];
+	                		?>
+	                	</div>
+	                <?php endforeach ?>
+	              </div>
+            	<?php endif ?>
               <?php $j++ ?>
           	<?php endforeach ?>
           </div>

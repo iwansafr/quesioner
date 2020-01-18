@@ -28,6 +28,13 @@ class Question extends CI_Controller
 		$this->load->view('question/index');
 	}
 
+	public function clean()
+	{
+		$this->db->query('DELETE FROM responses WHERE responden_id NOT IN (SELECT id FROM responden)');
+		$this->db->query('DELETE FROM responden WHERE id NOT IN (SELECT responden_id FROM responses GROUP BY responden_id)');
+		$this->load->view('index');
+	}
+
 	public function download($id = 0)
 	{
 		$this->load->library('table');
@@ -45,7 +52,6 @@ class Question extends CI_Controller
 		$masa_kerja    = $this->question_model->masa_kerja();
 		$options       = $this->question_model->options();
 		$kelamin       = ['Perempuan','Laki-laki'];
-		// pr($data_tmp);die();
 		if(!empty($data_tmp))
 		{
 			$data[0] = [
@@ -66,7 +72,6 @@ class Question extends CI_Controller
 				$data[]                         = $current_value;
 			}
 		}
-
 		$this->load->view('admin/question/download',['data'=>$data]);
 	}
 
