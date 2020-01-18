@@ -45,7 +45,7 @@ class Question extends CI_Controller
 		$masa_kerja    = $this->question_model->masa_kerja();
 		$options       = $this->question_model->options();
 		$kelamin       = ['Perempuan','Laki-laki'];
-		pr($data_tmp);die();
+		// pr($data_tmp);die();
 		if(!empty($data_tmp))
 		{
 			$data[0] = [
