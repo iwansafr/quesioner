@@ -102,19 +102,27 @@ class Question extends CI_Controller
 		{
 			foreach ($data_tmp as $key => $value) 
 			{
-				$data[$value['responden_id']]['jk'] = $value['kelamin'];
-				$data[$value['responden_id']]['umur'] = $value['usia'];
-				$data[$value['responden_id']]['pend'] = $value['pend_terakhir'];
+				$data[$value['responden_id']]['jk']         = $value['kelamin'];
+				$data[$value['responden_id']]['umur']       = $value['usia'];
+				$data[$value['responden_id']]['pend']       = $value['pend_terakhir'];
 				$data[$value['responden_id']]['masa_kerja'] = $value['masa_kerja'];
-				
 
 				$data[$value['responden_id']][$value['code'].'.'.$value['number']] = $value['answer'];
-				$data[$value['responden_id']][$value['code'].'.tot'] = @intval($data[$value['responden_id']][$value['code'].'.tot'])+$data[$value['responden_id']][$value['code'].'.'.$value['number']];
-				$data[$value['responden_id']][$value['code'].'.rata2'] = $data[$value['responden_id']][$value['code'].'.tot']/$value['number'];
+				$data[$value['responden_id']][$value['code'].' tot']               = @intval($data[$value['responden_id']][$value['code'].' tot'])+$data[$value['responden_id']][$value['code'].'.'.$value['number']];
+				$data[$value['responden_id']][$value['code'].' rata2']             = $data[$value['responden_id']][$value['code'].' tot']/$value['number'];
+
+				$tot   = $data[$value['responden_id']][$value['code'].' tot'];
+				$rata2 = $data[$value['responden_id']][$value['code'].' rata2'];
+				unset($data[$value['responden_id']][$value['code'].' tot']);
+				unset($data[$value['responden_id']][$value['code'].' rata2']);
+				$data[$value['responden_id']][$value['code'].' tot']   = $tot;
+				$data[$value['responden_id']][$value['code'].' rata2'] = $rata2;
 			}
 		}
 		if(!empty($data))
 		{
+			unset($data['tmp']);
+			pr($data);die();
 			$tmp_header = $data[array_key_first($data)];
 			$header = [];
 			if(!empty($tmp_header))
