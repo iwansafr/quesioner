@@ -10,9 +10,10 @@ if(!empty($id))
 $edit->init('edit');
 $edit->setTable('question_cat');
 
+$edit->addInput('code','text');
 $edit->addInput('title','text');
 $edit->addInput('description','textarea');
-
+$edit->setUnique(['code']);
 
 $roll = new zea();
 

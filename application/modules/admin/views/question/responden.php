@@ -5,7 +5,10 @@ $form = new zea();
 $form->init('roll');
 $form->setTable('responden');
 $form->search();
-$form->setHeading('<a href="'.base_url('admin/question/download').'" class="btn btn-default btn-sm"><i class="fa fa-file-excel"></i> Download Excel</a> | <a href="'.base_url('admin/question/clean').'" class="btn btn-default btn-sm"><i class="fa fa-trash"></i> Bersihkan</a>');
+$form->setHeading('
+	<a href="'.base_url('admin/question/download').'" class="btn btn-default btn-sm"><i class="fa fa-file-excel"></i> Download Excel</a> |
+	<a href="'.base_url('admin/question/download_analisa').'" class="btn btn-default btn-sm"><i class="fa fa-file-excel"></i> Result</a> |
+	<a href="'.base_url('admin/question/clean').'" class="btn btn-default btn-sm"><i class="fa fa-trash"></i> Bersihkan</a>');
 $form->addInput('id','plaintext');
 $form->setLabel('id','action');
 $form->setPlainText('id',[base_url('admin/question/responden_detail/{id}')=>'detail',base_url('admin/question/download/{id}')=>'Download Excel']);
