@@ -121,8 +121,6 @@ class Question extends CI_Controller
 		}
 		if(!empty($data))
 		{
-			unset($data['tmp']);
-			pr($data);die();
 			$tmp_header = $data[array_key_first($data)];
 			$header = [];
 			if(!empty($tmp_header))
